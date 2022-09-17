@@ -8,24 +8,28 @@ on:
 
 jobs:
   j1:
+    name: build addon
     runs-on: windows-2022
+    env:
+      ZIPFILENAME: "helloworld-addon.zip"
     steps:
       - name: checkout branch
         uses: actions/checkout@v2
+      - name: clean and prepare
+        run: |
+          Remove-Item -Recurse helloworld
+          Remove-Item $Env:ZIPFILENAME
       - name: create tmp zip dir
         run: |
-          md helloworld
-          Copy-Item -Recurse -Path .\* -Destination helloworld -Filter "*.toc","*.lua" -Verbose
-      - name: Archive Release
-        uses: thedoctor0/zip-release@0.6.2
-        with:
-          type: 'zip'
-          filename: "helloworld-addon.zip"
-          exclusions: '!helloworld'
+          $loc = Get-Location
+          New-Item -ItemType directory -Path $loc -Name helloworld -Force
+          Copy-Item -Recurse -Path $loc\* -Destination .\helloworld -Include "*.toc","*.lua"
+      - name: Package
+        run: Compress-Archive -DestinationPath $Env:ZIPFILENAME -CompressionLevel Fastest -LiteralPath "helloworld"
       - name: show dir
         run: dir
       - uses: actions/upload-artifact@v3
         with:
-          path: helloworld-addon.zip
+          path: ${ZIPFILENAME}
           if-no-files-found: error
           retention-days: 1
