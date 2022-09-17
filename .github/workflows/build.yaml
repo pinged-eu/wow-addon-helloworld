@@ -31,6 +31,6 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: ${{env.ZIPFILENAME}}
-          path: ${{env.ZIPFILENAME}}
+          path: helloworld/
           if-no-files-found: error
           retention-days: 1
