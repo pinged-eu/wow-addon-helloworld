@@ -1,0 +1,18 @@
+version: 2
+ 
+updates:
+  - package-ecosystem: "github-actions" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+      # day: "sunday" # only when weekly is set!
+      #      time: "18:00"
+      timezone: "Europe/Berlin"
+    labels:
+      - "githubactions"
+      - "updates"
+    reviewers:
+      - "lexxy23"
+    commit-message:
+      prefix: "⬆️"
+    open-pull-requests-limit: 5
