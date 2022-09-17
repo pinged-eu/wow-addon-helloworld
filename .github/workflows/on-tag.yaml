@@ -1,0 +1,32 @@
+name: Create release on tag
+
+on:
+  push:
+    branches:
+      - feature/testZip
+    tags:
+      - "*-alpha-*"
+
+jobs:
+  j1:
+    name: create release
+    runs-on: windows-2022
+    steps:
+      - name: "Determine tag"
+        run: "echo \"RELEASE_TAG=${GITHUB_REF#refs/tags/}\" >> $GITHUB_ENV"
+      - name: checkout tag
+        uses: actions/checkout@v2
+      - name: Archive Release
+        uses: thedoctor0/zip-release@0.6.2
+        with:
+          type: 'zip'
+          filename: "helloworld-addon.zip"
+          exclusions: '*.git* /*node_modules/* .editorconfig *.adoc *.md'
+      # - name: create github release
+      #   uses: ncipollo/release-action@v1.10.0
+      #   with:
+      #     artifacts: "release.tar.gz,foo/*.txt"
+      #     bodyFile: "body.md"
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      - name: show dir
+        run: dir
