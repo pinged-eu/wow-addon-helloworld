@@ -30,6 +30,6 @@ jobs:
         run: dir
       - uses: actions/upload-artifact@v3
         with:
-          path: ${ZIPFILENAME}
+          path: ${{env.ZIPFILENAME}}
           if-no-files-found: error
           retention-days: 1
