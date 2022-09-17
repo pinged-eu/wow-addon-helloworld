@@ -1,0 +1,7 @@
+## Interface: 90207
+## Title: Hello World Addon
+## Notes: A dummy HelloWorld addon to test Github with WoWUp
+## Author: Lexxy23
+## Version: 0.0.1
+
+HelloWorld.lua

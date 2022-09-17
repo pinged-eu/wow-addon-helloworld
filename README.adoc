@@ -1,0 +1,27 @@
+= wow-addon-helloworld
+:source-highlighter: highlight.js
+:highlightjs-languages: powershell,lua
+//:highlightjs-linenums-mode: inline
+
+A dummy WoW addon to test github deployment with WoWUp.
+
+Credits to <https://developer.school/tutorials/developing-world-of-warcraft-addons-hello-world-part-one>
+
+The main branch should contain the retail version.
+
+The classic* branches should contain the classic versions.
+
+== Link Addon to your WoW Directory
+
+Use powershell:
+
+[source,powershell]
+----
+# this directory here
+$myAddonDir= Get-Location
+
+# create link
+New-Item -ItemType SymbolicLink -Path "G:\World of Warcraft\_retail_\Interface\AddOns\HelloWorld" -Target $myAddonDir
+----
+
+Your WoW directory may be different, of course.
