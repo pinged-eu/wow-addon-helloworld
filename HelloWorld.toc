@@ -1,4 +1,4 @@
-## Interface: 90207
+## Interface: 100002
 ## Title: Hello World Addon
 ## Notes: A dummy HelloWorld addon to test Github with WoWUp
 ## Author: Lexxy23
