@@ -25,3 +25,8 @@ New-Item -ItemType SymbolicLink -Path "G:\World of Warcraft\_retail_\Interface\A
 ----
 
 Your WoW directory may be different, of course.
+
+## Sources
+
+* https://wow.tools/
+* https://wowpedia.fandom.com/wiki/Create_a_WoW_AddOn_in_15_Minutes

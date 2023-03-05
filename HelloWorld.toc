@@ -1,7 +1,9 @@
 ## Interface: 100005
 ## Title: Hello World Addon
+## Title-deDE: Hallo Welt
 ## Notes: A dummy HelloWorld addon to test Github with WoWUp
+## Notes-deDE: Ein kleines Grüßer-Addon.
 ## Author: Lexxy23
-## Version: 0.0.1
+## Version: 0.0.2
 
 HelloWorld.lua
