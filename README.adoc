@@ -4,6 +4,7 @@
 //:highlightjs-linenums-mode: inline
 
 A dummy WoW addon to test github deployment with WoWUp.
+It can be found on https://github.com/pinged-eu/wow-addon-helloworld[Github].
 
 Credits to <https://developer.school/tutorials/developing-world-of-warcraft-addons-hello-world-part-one>
 
