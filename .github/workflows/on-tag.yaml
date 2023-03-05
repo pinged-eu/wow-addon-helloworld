@@ -2,18 +2,12 @@ name: Create release on tag
 
 on:
   push:
-    branches:
-      - feature/testZip
     tags:
       - "*-alpha-*"
 
 jobs:
-  j1:
-    name: build addon
-    uses: 
-
   j2:
-    name: create release
+    name: create release on windows
     runs-on: windows-2022
     steps:
       - name: "Determine tag"
