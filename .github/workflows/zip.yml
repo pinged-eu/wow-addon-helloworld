@@ -1,9 +1,6 @@
 name: Package and release
 on:
     push:
-        branches:
-            - main
-            - develop
         tags:
             - 'v*'
 jobs:
