@@ -1,0 +1,34 @@
+name: build commit
+
+on:
+  push:
+  workflow_call:
+
+jobs:
+  j1:
+    name: build addon
+    runs-on: windows-2022
+    env:
+      ZIPFILENAME: "helloworld-addon.zip"
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v3
+      - name: clean and prepare
+        run: |
+          Remove-Item -Recurse helloworld -ErrorAction Continue
+          Remove-Item $Env:ZIPFILENAME -ErrorAction Continue
+      - name: create tmp zip dir
+        run: |
+          $loc = Get-Location
+          New-Item -ItemType directory -Path $loc -Name helloworld -Force
+          Copy-Item -Recurse -Path $loc\* -Destination .\helloworld -Include "*.toc","*.lua"
+      - name: Package
+        run: Compress-Archive -DestinationPath $Env:ZIPFILENAME -CompressionLevel Fastest -LiteralPath "helloworld"
+      - name: show dir
+        run: dir
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ${{env.ZIPFILENAME}}
+          path: helloworld/
+          if-no-files-found: error
+          retention-days: 1
