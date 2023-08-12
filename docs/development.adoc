@@ -2,6 +2,8 @@
 
 Just to be clear: this is just learning stuff. So don't expect this to be the next BigWigs or DBM.
 
+You can directly work with this project from https://vscode.dev/github/pinged-eu/wow-addon-helloworld[inside a browser].
+
 == Branch names
 
 The main branch is the develop branch where all the WoW Retail stuff is actively developed.
