@@ -1,0 +1,12 @@
+= Development of this Addon
+
+Just to be clear: this is just learning stuff. So don't expect this to be the next BigWigs or DBM.
+
+== Branch names
+
+The main branch is the develop branch where all the WoW Retail stuff is actively developed.
+
+Final deployable releases however are on their respective addon name branch:
+
+* dragonflight = the releases for WoW v10 DragonFlight
+* wotlk = the releases for WoW v3 Wrath of the Lich King

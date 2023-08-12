@@ -25,13 +25,15 @@ Use powershell:
 [source,powershell]
 ----
 # this directory here
-$myAddonDir= Get-Location
+$myAddonDir = Get-Location
 
 # create link
 New-Item -ItemType SymbolicLink -Path "G:\World of Warcraft\_retail_\Interface\AddOns\HelloWorld" -Target $myAddonDir
 ----
 
 Your WoW directory may be different, of course.
+
+include::docs/development.adoc[leveloffset=+1]
 
 === Sources
 
