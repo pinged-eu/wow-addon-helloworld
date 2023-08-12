@@ -1,0 +1,8 @@
+= Ingame scripts
+
+To get the build info number, run:
+
+[,text]
+----
+/dump select(4, GetBuildInfo())
+----

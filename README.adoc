@@ -1,4 +1,4 @@
-= wow-addon-helloworld
+= HelloWorld Dummy Addon
 :source-highlighter: highlight.js
 :highlightjs-languages: powershell,lua
 //:highlightjs-linenums-mode: inline
@@ -34,8 +34,10 @@ New-Item -ItemType SymbolicLink -Path "G:\World of Warcraft\_retail_\Interface\A
 Your WoW directory may be different, of course.
 
 include::docs/development.adoc[leveloffset=+1]
+include::docs/IngameScripts.adoc[leveloffset=+1]
 
 === Sources
 
 * https://wow.tools/
-* https://wowpedia.fandom.com/wiki/Create_a_WoW_AddOn_in_15_Minutes
+* https://wowpedia.fandom.com/wiki/Create_a_WoW_AddOn_in_15_Minutes[Tutorial 1]
+* https://wowpedia.fandom.com/wiki/TOC_format[TOC format]
