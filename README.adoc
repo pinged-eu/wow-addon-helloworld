@@ -1,4 +1,4 @@
-= wow-addon-helloworld
+= HelloWorld Dummy Addon
 :source-highlighter: highlight.js
 :highlightjs-languages: powershell,lua
 //:highlightjs-linenums-mode: inline
@@ -8,34 +8,16 @@ It can be found on https://github.com/pinged-eu/wow-addon-helloworld[Github].
 
 Credits to <https://developer.school/tutorials/developing-world-of-warcraft-addons-hello-world-part-one>
 
-== Use Addon in WoWUp
+== Installation
 
-Use our Github URL from above to install the addon via URL.
+Use Addon in WoWUp: use our Github URL from above to install the addon via URL.
 
-== Developer stuff
-
-The main branch should contain the retail version.
-
-The classic* branches should contain the classic versions.
-
-=== Link Addon to your WoW Directory
-
-Use powershell:
-
-[source,powershell]
-----
-# this directory here
-$myAddonDir = Get-Location
-
-# create link
-New-Item -ItemType SymbolicLink -Path "G:\World of Warcraft\_retail_\Interface\AddOns\HelloWorld" -Target $myAddonDir
-----
-
-Your WoW directory may be different, of course.
 
 include::docs/development.adoc[leveloffset=+1]
+include::docs/IngameScripts.adoc[leveloffset=+1]
 
-=== Sources
+== Sources
 
 * https://wow.tools/
-* https://wowpedia.fandom.com/wiki/Create_a_WoW_AddOn_in_15_Minutes
+* https://wowpedia.fandom.com/wiki/Create_a_WoW_AddOn_in_15_Minutes[Tutorial 1]
+* https://wowpedia.fandom.com/wiki/TOC_format[TOC format]

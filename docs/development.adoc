@@ -10,3 +10,5 @@ Final deployable releases however are on their respective addon name branch:
 
 * dragonflight = the releases for WoW v10 DragonFlight
 * wotlk = the releases for WoW v3 Wrath of the Lich King
+
+include::development.installation.adoc[leveloffset=+1]

@@ -1,0 +1,11 @@
+## Interface: 30402
+## Title: Hello World Addon
+## Title-deDE: Hallo Welt
+## Notes: A dummy HelloWorld addon to test Github with WoWUp
+## Notes-deDE: Ein kleines Grüßer-Addon.
+## Author: Lexxy23
+## Version: 0.2.2-alpha.1
+## IconTexture: Interface/Addons/HelloWorld/assets/addon_icon_32.png
+## DefaultState: enabled
+
+HelloWorld.lua
