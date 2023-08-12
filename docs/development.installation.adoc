@@ -1,0 +1,18 @@
+= Installation for Developers
+
+Use powershell and run these commands in an elevated session (run as admin!):
+
+[source,powershell]
+----
+# this directory here
+$myAddonDir = Get-Location
+# your WoW directory
+$myWoWDir = "G:\World of Warcraft"
+# the flavor: usually retail, but can also be _classic_
+$flavor = "_retail_"
+
+# create link
+New-Item -ItemType SymbolicLink -Path "$myWoWDir\$flavor\Interface\AddOns\HelloWorld" -Target $myAddonDir
+----
+
+Your WoW directory may be different, of course.
