@@ -8,7 +8,7 @@ Use powershell and run these commands in an elevated session (run as admin!):
 $myAddonDir = Get-Location
 # your WoW directory
 $myWoWDir = "G:\World of Warcraft"
-# the flavor: usually retail, but can also be _classic_
+# the flavor: usually retail, but can also be _classic_, _classic_era_, _ptr_
 $flavor = "_retail_"
 
 # create link

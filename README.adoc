@@ -2,6 +2,7 @@
 :source-highlighter: highlight.js
 :highlightjs-languages: powershell,lua
 //:highlightjs-linenums-mode: inline
+:toc:
 
 A dummy WoW addon to test github deployment with WoWUp.
 It can be found on https://github.com/pinged-eu/wow-addon-helloworld[Github].
@@ -10,7 +11,7 @@ Credits to <https://developer.school/tutorials/developing-world-of-warcraft-addo
 
 == Installation
 
-Use Addon in WoWUp: use our Github URL from above to install the addon via URL.
+Via WoWUp: use our Github URL from above to install the addon via URL.
 
 
 include::docs/development.adoc[leveloffset=+1]
@@ -20,4 +21,4 @@ include::docs/IngameScripts.adoc[leveloffset=+1]
 
 * https://wow.tools/
 * https://wowpedia.fandom.com/wiki/Create_a_WoW_AddOn_in_15_Minutes[Tutorial 1]
-* https://wowpedia.fandom.com/wiki/TOC_format[TOC format]
+* https://warcraft.wiki.gg/wiki/TOC_format[TOC format]
