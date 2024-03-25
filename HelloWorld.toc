@@ -1,4 +1,4 @@
-## Interface: 100205
+## Interface: 100206
 ## Title: Hello World Addon
 ## Title-deDE: Hallo Welt
 ## Notes: A dummy HelloWorld addon to test Github with WoWUp
