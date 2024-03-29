@@ -8,4 +8,7 @@
 ## IconTexture: Interface/Addons/HelloWorld/assets/addon_icon_32.png
 ## DefaultState: enabled
 
+localization.core.lua
+localization.deDE.lua
+
 HelloWorld.lua

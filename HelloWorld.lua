@@ -1,5 +1,7 @@
 local name = UnitName("player")
 
+local _, L = ...;
+
 local f = CreateFrame("Frame")
 
 function f:OnEvent(event, ...)
@@ -23,4 +25,4 @@ f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:RegisterEvent("CHAT_MSG_CHANNEL")
 f:SetScript("OnEvent", OnEvent)
 
-message("Hello, " .. name .. "!")
+message(L["hello"] .. name .. "!")
