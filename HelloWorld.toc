@@ -1,5 +1,5 @@
 ## Interface: 100206
-## Title: Hello World Addon
+## Title: Hello World
 ## Title-deDE: Hallo Welt
 ## Notes: A dummy HelloWorld addon to test Github with WoWUp
 ## Notes-deDE: Ein kleines Grüßer-Addon.
@@ -7,6 +7,18 @@
 ## Version: 0.2.3-rc.2
 ## IconTexture: Interface/Addons/HelloWorld/assets/addon_icon_32.png
 ## DefaultState: enabled
+## SavedVariables: HelloWorldDB
+## OptionalDeps: Ace3
+
+Libs\LibStub\LibStub.lua
+Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Libs\AceAddon-3.0\AceAddon-3.0.xml
+Libs\AceEvent-3.0\AceEvent-3.0.xml
+Libs\AceDB-3.0\AceDB-3.0.xml
+Libs\AceDBOptions-3.0\AceDBOptions-3.0.xml
+Libs\AceConsole-3.0\AceConsole-3.0.xml
+Libs\AceGUI-3.0\AceGUI-3.0.xml
+Libs\AceConfig-3.0\AceConfig-3.0.xml
 
 localization.core.lua
 localization.deDE.lua

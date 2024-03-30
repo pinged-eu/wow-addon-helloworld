@@ -1,28 +1,36 @@
+HelloWorld = LibStub("AceAddon-3.0"):NewAddon("HelloWorld", "AceConsole-3.0", "AceEvent-3.0")
+
 local name = UnitName("player")
 
 local _, L = ...;
 
-local f = CreateFrame("Frame")
-
-function f:OnEvent(event, ...)
-	self[event](self, event, ...)
+function HelloWorld:OnInitialize()
+	-- Called when the addon is loaded
+	self:Print(L["hello"] .. name .. "!")
+	self:RegisterChatCommand("hw", "SlashCommand")
+	self:RegisterChatCommand("helloworld", "SlashCommand")
 end
 
-function f:ADDON_LOADED(event, addOnName)
-	print(event, addOnName)
+function HelloWorld:SlashCommand(msg)
+	if msg == "ping" then
+		self:Print("pong!")
+	else
+		self:Print("hello there!")
+	end
 end
 
-function f:PLAYER_ENTERING_WORLD(event, isLogin, isReload)
-	print(event, isLogin, isReload)
+function HelloWorld:OnEnable()
+	self:RegisterEvent("ZONE_CHANGED")
 end
 
-function f:CHAT_MSG_CHANNEL(event, text, playerName, _, channelName)
-	print(event, text, playerName, channelName)
+function HelloWorld:OnDisable()
+	-- Called when the addon is disabled
 end
 
-f:RegisterEvent("ADDON_LOADED")
-f:RegisterEvent("PLAYER_ENTERING_WORLD")
-f:RegisterEvent("CHAT_MSG_CHANNEL")
-f:SetScript("OnEvent", OnEvent)
-
-message(L["hello"] .. name .. "!")
+function HelloWorld:ZONE_CHANGED()
+	local subzone = GetSubZoneText()
+	self:Print("You have changed zones!", GetZoneText(), subzone)
+	if GetBindLocation() == subzone then
+		self:Print("Welcome Home!")
+	end
+end
