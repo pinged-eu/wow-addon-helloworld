@@ -2,6 +2,7 @@ HelloWorld = LibStub("AceAddon-3.0"):NewAddon("HelloWorld", "AceConsole-3.0", "A
 
 local name = UnitName("player")
 
+---@class L
 local _, L = ...;
 
 function HelloWorld:OnInitialize()
