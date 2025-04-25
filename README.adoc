@@ -13,7 +13,7 @@ Credits to <https://developer.school/tutorials/developing-world-of-warcraft-addo
 
 Via WoWUp: use our Github URL from above to install the addon via URL.
 
-
+include::CHANGELOG.adoc[leveloffset=+1]
 include::docs/development.adoc[leveloffset=+1]
 include::docs/IngameScripts.adoc[leveloffset=+1]
 
