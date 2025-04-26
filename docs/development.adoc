@@ -4,6 +4,8 @@ Just to be clear: this is just learning stuff. So don't expect this to be the ne
 
 You can directly work with this project from https://vscode.dev/github/pinged-eu/wow-addon-helloworld[inside a browser].
 
+include::development.installation.adoc[leveloffset=+1]
+
 == Branch names
 
 The main branch is the develop branch where all the WoW Retail stuff is actively developed.
@@ -14,4 +16,36 @@ Final deployable releases however are on their respective addon name branch:
 * wotlk = the releases for WoW v3 Wrath of the Lich King
 * thewarwithin = the releases for WoW v11 The War Within
 
-include::development.installation.adoc[leveloffset=+1]
+To use the `git flow` feature, you can run this command to initialize it (while on the develop branch):
+
+[,shell]
+----
+git flow init --feature=feat/ --bugfix=fix/ --release=thewarwithin/ --tag="v"
+----
+
+It will ask you for the name of the _next release_ branch. Just enter `develop` (should be prefilled already).
+
+== Creating new features
+
+Run:
+
+[,shell]
+----
+git flow feature start <feature-name>
+----
+
+Perform your changes and commit them. Push it to the remote repository:
+
+[,shell]
+----
+git push origin <feature-name>
+----
+
+To manually merge it into the develop branch:
+
+[,shell]
+----
+git flow feature finish <feature-name>
+----
+
+NOTE: This should be done automatically by the CI/CD pipeline after some review.

@@ -1,17 +1,17 @@
 name: Package and release
 on:
-    push:
-        tags:
-            - 'v*'
+  push:
+    tags:
+      - "v*"
 jobs:
-    release:
-        runs-on: ubuntu-latest
-        env:
-            GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
-        steps:
-            - name: Checkout project
-              uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0
-            - name: Package and release
-              uses: BigWigsMods/packager@v2
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Package and release
+        uses: BigWigsMods/packager@v2

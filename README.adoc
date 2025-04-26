@@ -13,9 +13,9 @@ Credits to <https://developer.school/tutorials/developing-world-of-warcraft-addo
 
 Via WoWUp: use our Github URL from above to install the addon via URL.
 
-
 include::docs/development.adoc[leveloffset=+1]
 include::docs/IngameScripts.adoc[leveloffset=+1]
+include::CHANGELOG.adoc[leveloffset=+1]
 
 == Sources
 
@@ -23,4 +23,3 @@ include::docs/IngameScripts.adoc[leveloffset=+1]
 * https://wowpedia.fandom.com/wiki/Create_a_WoW_AddOn_in_15_Minutes[Tutorial 1]
 * https://wowpedia.fandom.com/wiki/Ace3_for_Dummies[Using Ace3]
 * https://warcraft.wiki.gg/wiki/TOC_format[TOC format]
-
