@@ -10,7 +10,6 @@ function HelloWorld:OnInitialize()
     self:Print(L["hello"] .. name .. "!")
     self:RegisterChatCommand("hw", "SlashCommand")
     self:RegisterChatCommand("helloworld", "SlashCommand")
-    self.db = LibStub("AceDB-3.0"):New("MyAddonDB")
 end
 
 function HelloWorld:SlashCommand(msg)
@@ -27,6 +26,7 @@ end
 
 function HelloWorld:OnDisable()
     -- Called when the addon is disabled
+    self:Print("Deactivated!")
 end
 
 function HelloWorld:ZONE_CHANGED()
