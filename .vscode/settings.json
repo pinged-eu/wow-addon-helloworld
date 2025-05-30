@@ -17,7 +17,11 @@
     "ColorPickerFrame",
     "OpacitySliderFrame",
     "OKAY",
-    "NOT_BOUND"
+    "NOT_BOUND",
+    "ReloadUI",
+    "IsSecureCmd",
+    "NUM_CHAT_WINDOWS",
+    "ChatEdit_GetActiveWindow"
   ],
-  "asciidoc.antora.enableAntoraSupport": true
+  "asciidoc.antora.showEnableAntoraPrompt": true
 }

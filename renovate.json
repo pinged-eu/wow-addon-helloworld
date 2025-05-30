@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "timezone": "Europe/Berlin",
-  "extends": ["config:recommended", "schedule:nonOfficeHours"],
+  "extends": ["config:recommended"],
   "packageRules": [
     {
       "description": "Automatically merge minor and patch-level updates",
