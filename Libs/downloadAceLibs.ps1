@@ -1,6 +1,11 @@
 #!/usr/bin/env pwsh
+#
+param(
+    [string]$AceUrl = "https://www.wowace.com/projects/ace3/files/latest"
+    # Cata Classic: https://www.wowace.com/projects/ace3/files/6538965/download
+    # MoP Classic: https://www.wowace.com/projects/ace3/files/6538965/download
+)
 
-$AceUrl = "https://www.wowace.com/projects/ace3/files/latest"
 Write-Host "Downloading AceLibs from $AceUrl..."
 
 # # Download latest acelib from website, follow redirects
