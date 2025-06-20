@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+== [Unreleased]
+
+=== Added
+
+- Add cataclysm idea
+
+=== Changed
+
+- Clarify usage of gitflow to perform releases
+- Update TOC to v11.1.7
+- Clarify how to deal with fixes
+- Merge branch 'thewarwithin' into develop
+- Merge branch 'release/11.1.5' into thewarwithin
+- Update changelog
+
 == [11.1.5] - 2025-04-26
 
 === Added
@@ -154,6 +169,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🎉 initial helloworld idea
 - Initial commit
 
+[unreleased]: https://github.com///compare/v11.1.5..HEAD
 [11.1.5]: https://github.com///compare/v11.1.0..v11.1.5
 [11.1.0]: https://github.com///compare/v11.0.7..v11.1.0
 [11.0.7]: https://github.com///compare/v11.0.5..v11.0.7
