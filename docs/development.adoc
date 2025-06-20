@@ -9,21 +9,25 @@ include::development.installation.adoc[leveloffset=+1]
 == Branch names
 
 The main branch is the develop branch where all the WoW Retail stuff is actively developed.
+This also includes updating the TOC to the latest PTR build.
 
 Final deployable releases however are on their respective addon name branch:
 
 * dragonflight = the releases for WoW v10 DragonFlight
 * wotlk = the releases for WoW v3 Wrath of the Lich King
+* cataclysm = the releases for WoW v4 Cataclysm
+* mop = the releases for WoW v5 Mists of Pandaria
 * thewarwithin = the releases for WoW v11 The War Within
 
 To use the `git flow` feature, you can run this command to initialize it (while on the develop branch):
 
 [,shell]
 ----
-git flow init --feature=feat/ --bugfix=fix/ --release=thewarwithin/ --tag="v"
+git flow init --feature=feat/ --bugfix=fix/ --release=release/ --tag="v"
 ----
 
-It will ask you for the name of the _next release_ branch. Just enter `develop` (should be prefilled already).
+The "next release" branch is _develop_.
+The production release branch is _thewarwithin_
 
 == Creating new features
 
@@ -49,3 +53,7 @@ git flow feature finish <feature-name>
 ----
 
 NOTE: This should be done automatically by the CI/CD pipeline after some review.
+
+== Adding fixes
+
+Fixes should be done against the current live branch (say, thewarwithin currently). The branch name must be fix/FIXNAMEORID. It should be applied against the current live branch, as well as the develop branch.
