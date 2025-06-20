@@ -23,10 +23,11 @@ To use the `git flow` feature, you can run this command to initialize it (while 
 
 [,shell]
 ----
-git flow init --feature=feat/ --bugfix=fix/ --release=thewarwithin/ --tag="v"
+git flow init --feature=feat/ --bugfix=fix/ --release=release/ --tag="v"
 ----
 
-It will ask you for the name of the _next release_ branch. Just enter `develop` (should be prefilled already).
+The "next release" branch is _develop_.
+The production release branch is _thewarwithin_
 
 == Creating new features
 
