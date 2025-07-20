@@ -1,0 +1,3 @@
+= Installation
+
+Via https://www.wowup.io[WoWUp]: use our Github URL from above to install the addon via URL.

@@ -1,0 +1,8 @@
+= Doing Localization
+
+As a localizer, you will need to translate the addon's strings into different languages. You can do this by editing the localization files in the `Locales` directory.
+It contains a file for each supported language, named after the language code (e.g., `enUS` for English (United States)). Each file contains a table of key-value pairs, where the key is the snippet key used in the addon's code, and the value is the translated string.
+
+Also, do not forget the HelloWorld.toc file, which contains the _notes_ and the _title_.
+
+In case you add a new localization, please also update the Locales.xml file to contain your new language.

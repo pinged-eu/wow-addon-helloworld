@@ -42,4 +42,6 @@ luac.out
 /helloworld
 
 node_modules
-Libs/*
+#Libs/*
+!.gitattributes
+!.gitignore

@@ -1,6 +1,6 @@
-## Interface: 110107, 110200
-## Title: Hello World |cfd9b9b9b(TheWarWithin)|r
-## Title-deDE: Hallo Welt |cfd9b9b9b(TWW)|r
+## Interface: 50500
+## Title: Hello World Addon |cfd9b9b9b(Cataclysm)|r
+## Title-deDE: Hallo Welt |cfd9b9b9b(Cataclysm)|r
 ## Notes: A dummy HelloWorld addon to test Github with WoWUp
 ## Notes-deDE: Ein kleines Grüßer-Addon.
 ## Author: Lexxy23
