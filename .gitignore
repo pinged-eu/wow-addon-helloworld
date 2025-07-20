@@ -43,3 +43,5 @@ luac.out
 
 node_modules
 #Libs/*
+!.gitattributes
+!.gitignore
