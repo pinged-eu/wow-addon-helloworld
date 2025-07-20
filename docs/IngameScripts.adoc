@@ -6,3 +6,17 @@ To get the build info number, run:
 ----
 /dump select(4, GetBuildInfo())
 ----
+
+To enable error messages, run:
+
+[,text]
+----
+/console scriptErrors 1
+----
+
+Or use 0 to disable error messages
+
+[,text]
+----
+/console scriptErrors 0
+----

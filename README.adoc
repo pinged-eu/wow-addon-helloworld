@@ -9,10 +9,7 @@ It can be found on https://github.com/pinged-eu/wow-addon-helloworld[Github].
 
 Credits to <https://developer.school/tutorials/developing-world-of-warcraft-addons-hello-world-part-one>
 
-== Installation
-
-Via WoWUp: use our Github URL from above to install the addon via URL.
-
+include::docs/usage.adoc[leveloffset=+1]
 include::docs/development.adoc[leveloffset=+1]
 include::docs/IngameScripts.adoc[leveloffset=+1]
 include::CHANGELOG.adoc[leveloffset=+1]
