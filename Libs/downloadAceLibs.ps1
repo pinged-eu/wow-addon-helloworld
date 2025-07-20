@@ -2,8 +2,7 @@
 #
 param(
     [string]$AceUrl = "https://www.wowace.com/projects/ace3/files/latest"
-    # Cata Classic: https://www.wowace.com/projects/ace3/files/6538965/download
-    # MoP Classic: https://www.wowace.com/projects/ace3/files/6538965/download
+    # MoP Classic: https://www.wowace.com/projects/ace3/files/6757007/download
 )
 
 Write-Host "Downloading AceLibs from $AceUrl..."
