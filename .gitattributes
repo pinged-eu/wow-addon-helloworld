@@ -1,9 +1,10 @@
 # do not modify gitattributes
 .gitattributes !filter !diff
 
-# use LF for all text files
+# rely on git setting core.eol=native and core.autocrlf=true
 * text=auto
-
+*.lua text
+*.toc text
 
 # Configs
 *.tfvars filter=git-crypt diff=git-crypt
