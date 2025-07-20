@@ -7,12 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 == [Unreleased]
 
+=== Changed
+
+- No idea
+- Clarify crlf line endings (#16)
+- Config options for addon (#14)
+- Merge branch 'thewarwithin' into develop
+- Merge branch 'release/11.1.7' into thewarwithin
+
+== [11.1.7] - 2025-06-20
+
 === Added
 
 - Add cataclysm idea
 
 === Changed
 
+- 🔖 bump version to 11.1.7
 - Clarify usage of gitflow to perform releases
 - Update TOC to v11.1.7
 - Clarify how to deal with fixes
@@ -169,7 +180,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🎉 initial helloworld idea
 - Initial commit
 
-[unreleased]: https://github.com///compare/v11.1.5..HEAD
+[unreleased]: https://github.com///compare/v11.1.7..HEAD
+[11.1.7]: https://github.com///compare/v11.1.5..v11.1.7
 [11.1.5]: https://github.com///compare/v11.1.0..v11.1.5
 [11.1.0]: https://github.com///compare/v11.0.7..v11.1.0
 [11.0.7]: https://github.com///compare/v11.0.5..v11.0.7
