@@ -29,13 +29,14 @@ google-services.json filter=git-crypt diff=git-crypt
 *.ipa filter=lfs diff=lfs merge=lfs -text
 *.woff filter=lfs diff=lfs merge=lfs -text
 *.woff2 filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text binary
-*.gif filter=lfs diff=lfs merge=lfs -text binary
-*.ico filter=lfs diff=lfs merge=lfs -text binary
-*.jpg filter=lfs diff=lfs merge=lfs -text binary
-*.webp filter=lfs diff=lfs merge=lfs -text binary
+*.png binary
+*.gif binary
+*.ico binary
+*.jpg binary
+*.webp binary
 *.svg text
 *.xml text
+*.json text
 *.adoc text
 *.toml text
 *.gpg binary
