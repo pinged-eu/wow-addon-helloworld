@@ -12,3 +12,4 @@
 embeds.xml
 Locales\Locales.xml
 HelloWorld.lua
+RaidLog.lua
