@@ -15,6 +15,11 @@ RaidLogFrame:SetScript("OnDragStop", function(self)
   self:StopMovingOrSizing()
 end)
 
+-- Set background color and transparency
+RaidLogFrame.backdrop = RaidLogFrame:CreateTexture(nil, "BACKGROUND")
+RaidLogFrame.backdrop:SetAllPoints(RaidLogFrame)
+RaidLogFrame.backdrop:SetColorTexture(0, 0.5, 0, 0.25)
+
 -- Create a title bar
 local titleBar = RaidLogFrame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 titleBar:SetPoint("TOP", RaidLogFrame, "TOP", 0, 0)
