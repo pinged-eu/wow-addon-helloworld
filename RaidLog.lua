@@ -54,7 +54,7 @@ function RaidLog.AddMessage(self, message)
   textFrame:SetHeight(math.abs(textHeight))
 
   -- Adjust scrollbar to bottom
-  scrollFrame:SetVerticalScrollRange(0, math.abs(textHeight) - scrollFrame:GetHeight())
+  -- scrollFrame:SetVerticalScrollRange(0, math.abs(textHeight) - scrollFrame:GetHeight())
   scrollFrame:SetVerticalScroll(scrollFrame:GetVerticalScrollRange());
 end
 
@@ -69,17 +69,17 @@ SlashCmdList["RAIDLOG"] = function(msg)
 end
 
 -- Example usage:
--- RaidLog:AddMessage("The boss is casting a spell!")
--- RaidLog:AddMessage("You have been hit by a debuff!")
+RaidLog:AddMessage("The boss is casting a spell!")
+RaidLog:AddMessage("You have been hit by a debuff!")
 -- Function to handle chat messages
-local function OnChatMessage(event, msg, sender, language, channel, _, _, _, _, guid)
-  -- Display all NPC messages
-  if event == "CHAT_MSG_NPC" then
-    RaidLog:AddMessage(msg)
-  end
-end
+-- local function OnChatMessage(event, msg, sender, language, channel, _, _, _, _, guid)
+--   -- Display all NPC messages
+--   if event == "CHAT_MSG_NPC" then
+--     RaidLog:AddMessage(msg)
+--   end
+-- end
 
 -- Register the event
-local frame = CreateFrame("Frame")
-frame:RegisterEvent("CHAT_MSG_NPC")
-frame:SetScript("OnEvent", OnChatMessage)
+-- local frame = CreateFrame("Frame")
+-- frame:RegisterEvent("CHAT_MSG_NPC")
+-- frame:SetScript("OnEvent", OnChatMessage)
