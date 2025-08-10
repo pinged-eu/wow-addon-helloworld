@@ -88,3 +88,41 @@ RaidLog:AddMessage("You have been hit by a debuff!")
 -- local frame = CreateFrame("Frame")
 -- frame:RegisterEvent("CHAT_MSG_NPC")
 -- frame:SetScript("OnEvent", OnChatMessage)
+
+
+local myWindow = CreateFrame("Frame", "MyAddonWindow", UIParent, "BasicFrameTemplate")
+myWindow:SetSize(300, 200)
+myWindow:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+myWindow:EnableMouse(true)
+myWindow:SetMovable(true)
+myWindow:RegisterForDrag("LeftButton")
+myWindow:SetScript("OnDragStart", function(self)
+  self:StartMoving()
+end)
+myWindow:SetScript("OnDragStop", function(self)
+  self:StopMovingOrSizing()
+end)
+-- set titleBar
+
+
+
+local chatText = myWindow:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+chatText:SetPoint("TOPLEFT", myWindow, "TOPLEFT", 10, -30)
+chatText:SetPoint("BOTTOMRIGHT", myWindow, "BOTTOMRIGHT", -10, 10)
+chatText:SetFontObject(GameFontNormal)
+chatText:SetJustifyH("LEFT")
+chatText:SetJustifyV("TOP")
+chatText:SetTextColor(1, 1, 1)
+chatText:SetText("Dies ist eine Textnachricht.\n")
+
+-- Beispiel für farbige Textausgabe
+local function AddColoredMessage(text, color)
+  chatText:SetText(chatText:GetText() .. string.format("|c%s%s|r\n", color, text))
+end
+
+-- Beispiel für die Nutzung
+AddColoredMessage("Rote Nachricht", "FFFF0000")  -- Rot
+AddColoredMessage("Grüne Nachricht", "FF00FF00") -- Grün
+AddColoredMessage("Blaue Nachricht", "FF0000FF") -- Blau
+
+myWindow:Show()
