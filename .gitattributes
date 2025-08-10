@@ -1,9 +1,8 @@
 # do not modify gitattributes
-.gitattributes !filter !diff
+.gitattributes text !filter !diff
 
 # use LF for all text files
-* text=auto
-
+* text=auto eol=lf
 
 # Configs
 *.tfvars filter=git-crypt diff=git-crypt
@@ -57,3 +56,7 @@ google-services.json filter=git-crypt diff=git-crypt
 *.{bat,[bB][aA][tT]} text eol=crlf
 *.{ics,[iI][cC][sS]} text eol=crlf
 *.ps1 text eol=crlf
+
+# MacOS
+*.plist text eol=lf
+*.DS_Store binary
