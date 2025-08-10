@@ -1,0 +1,2 @@
+[aliases]
+lg = "log --template='commit_id.short() ++ \" \" ++ description'"
