@@ -1,47 +1,40 @@
-# Compiled Lua sources
-luac.out
-
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
-
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-/helloworld
-
-node_modules
-#Libs/*
-!.gitattributes
+# famous file extensions
+.*
+!.git-crypt
+!.gitpod*
 !.gitignore
+!.gitattributes
+!.github
+!.gitlab
+!.gitsecret
+!.terraformignore
+!.pre-commit-config.yaml
+!.pre-commit-check-config.yaml
+!.gitlab-ci.yml
+!.licenserc.yaml
+!.semver-version
+.gitsecret/keys/random_seed
+!*.secret
+!.updatePreRelease.ps1
+!.updatePostRelease.ps1
+!.changelogs
+!.editorconfig
+*~
+*.swp
+*.log
+*.orig
+
+# famous directories
+target
+bin
+build
+logs
+work
+out
+lib
+dist
+test-output
+coverage
+temp
+tmp
+packages

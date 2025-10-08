@@ -1,46 +1,58 @@
 # Editor configuration, see https://editorconfig.org
 root = true
 
-# basic for all files
+# Default für alle Dateien – LF als plattformneutraler Zeilenumbruch
 [*]
 charset = utf-8
 indent_style = space
 indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
+end_of_line = lf
 
-# Windows-style newlines with a newline ending every file
+[.semver-version]
+insert_final_newline = false
+
+# Windows-spezifische Dateien – CRLF
+[*.bat]
 end_of_line = crlf
 
-# Tab indentation (no size specified)
-[Makefile]
-indent_style = tab
+[*.cmd]
+end_of_line = crlf
 
-[*.ts]
-quote_type = single
+[*.ps1]
+end_of_line = crlf
 
-[*.md]
-max_line_length = off
-trim_trailing_whitespace = false
+[*.ics]
+end_of_line = crlf
 
-[*.sh]
-# like -i=4
+# Shell-Skripte – für Unix/macOS
+[*.{sh,bash}]
 indent_style = space
-indent_size = 4
+indent_size = 2
+end_of_line = lf
 
-# --language-variant
-shell_variant      = posix
-binary_next_line   = true
-# --case-indent
+# Spezielle Shell-Formatierung (shfmt etc.)
+shell_variant = posix
+binary_next_line = true
 switch_case_indent = true
-space_redirects    = true
-keep_padding       = true
-# --func-next-line
-# function_next_line = true
+space_redirects = true
+keep_padding = true
 
-# Ignore the entire "third_party" directory when calling shfmt on directories,
-# such as "shfmt -l -w .". When formatting files directly,
-# like "shfmt -w third_party/foo.sh" or "shfmt --filename=third_party/foo.sh",
-# the ignore logic is applied only when the --apply-ignore flag is given.
+# Ausschluss: Drittanbieter-Skripte vom Formatieren
 [third_party/**]
 ignore = true
+
+# Markdown – keine automatische Leerzeichenentfernung
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = off
+
+# TypeScript – Single Quotes
+[*.ts]
+quote_type = single
+ij_typescript_use_double_quotes = false
+
+# Makefile – Tab-indention
+[Makefile]
+indent_style = tab
