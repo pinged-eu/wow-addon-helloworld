@@ -20,3 +20,4 @@ include::CHANGELOG.adoc[leveloffset=+1]
 * https://wowpedia.fandom.com/wiki/Create_a_WoW_AddOn_in_15_Minutes[Tutorial 1]
 * https://wowpedia.fandom.com/wiki/Ace3_for_Dummies[Using Ace3]
 * https://warcraft.wiki.gg/wiki/TOC_format[TOC format]
+* https://warcraft.wiki.gg/wiki/API_C_Item.GetItemInfo

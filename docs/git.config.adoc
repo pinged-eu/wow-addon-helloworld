@@ -3,6 +3,6 @@
 Make sure `core.autocrlf` is set to `true` (or at least `input`) in your global Git configuration:
 
 ```text
-git config core.eol crlf
+git config core.eol lf
 git config core.autocrlf input
 ```
