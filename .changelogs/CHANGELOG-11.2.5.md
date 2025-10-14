@@ -1,0 +1,7 @@
+## 11.2.5 - 2025-10-14
+
+* **Release**: https://gitlab.com/pinged-eu/wow-addon-helloworld/-/releases/v11.2.5
+* **Tag**: https://gitlab.com/pinged-eu/wow-addon-helloworld/-/tags/v11.2.5
+* **Delta**: https://gitlab.com/pinged-eu/wow-addon-helloworld/compare?from=v11.2.0&to=v11.2.5
+
+
