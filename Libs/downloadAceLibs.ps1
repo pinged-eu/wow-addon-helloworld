@@ -1,14 +1,17 @@
 #!/usr/bin/env pwsh
 #
+[CmdletBinding()]
 param(
-    [string]$AceUrl = "https://www.wowace.com/projects/ace3/files/latest"
+    [Parameter(Mandatory = $false, HelpMessage = "the url to download AceLibs from")][string]$AceUrl = "https://www.wowace.com/projects/ace3/files/latest"
     # MoP Classic: https://www.wowace.com/projects/ace3/files/6757007/download
 )
+$ErrorActionPreference = "Stop"
+Set-StrictMode -Version 2.0
 
 Write-Host "Downloading AceLibs from $AceUrl..."
 
-# # Download latest acelib from website, follow redirects
-Invoke-WebRequest -Uri $AceUrl -MaximumRedirection 10 -OutFile "$PSScriptRoot/AceLibs.zip" -UseBasicParsing
+# Download latest acelib from website, follow redirects
+Invoke-WebRequest -Uri $AceUrl -MaximumRedirection 15 -OutFile "$PSScriptRoot/AceLibs.zip" -ConnectionTimeoutSeconds 15 -OperationTimeoutSeconds 9 -MaximumRetryCount 3 -RetryIntervalSec 5
 
 Write-Host "Extracting AceLibs..."
 # Extract downloaded zip file
