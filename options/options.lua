@@ -17,8 +17,12 @@ local options = {
       name = "Enable Zone Messages",
       desc = "Enables / disables the zone messages",
       type = "toggle",
-      set = function(info,val) HelloWorld.enableZoneMessage = val end,
-      get = function(info) return HelloWorld.enableZoneMessage end
+      set = function(info, val)
+          HelloWorld.db.profile.enableZoneMessage = val
+      end,
+      get = function(info)
+          return HelloWorld.db.profile.enableZoneMessage
+      end
     },
   }
 }
@@ -27,9 +31,4 @@ local options = {
 function HelloWorld:RegisterOptions()
     LibStub("AceConfig-3.0"):RegisterOptionsTable("HelloWorld", options)
     LibStub("AceConfigDialog-3.0"):AddToBlizOptions("HelloWorld", "Hello World")
-end
-
--- Initialize the addon
-function HelloWorld:OnInitialize()
-  self:RegisterOptions()
 end
