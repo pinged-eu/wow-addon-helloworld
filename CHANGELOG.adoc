@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+== [11.2.7] - 2025-12-28
+
+=== Changed
+
+- 🔖 bump version to 11.2.7
+- 🔨 bump actions/checkout from 5 to 6 (#22)
+- ⬆️ Update actions/checkout action to v6 (#21)
+- 🔨 bump actions/upload-artifact from 4 to 6 (#23)
+- Update TOC to WoW v11.2.7
+- Merge branch 'thewarwithin' into develop
+- Merge branch 'release/11.2.5' into thewarwithin
+- 🔨 prepare next release
+
 == [11.2.5] - 2025-10-14
 
 === Added
@@ -199,6 +212,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🎉 initial helloworld idea
 - Initial commit
 
+[11.2.7]: https://github.com///compare/v11.2.5..v11.2.7
 [11.2.5]: https://github.com///compare/v11.2.0..v11.2.5
 [11.2.0]: https://github.com///compare/v11.1.7..v11.2.0
 [11.1.7]: https://github.com///compare/v11.1.5..v11.1.7
