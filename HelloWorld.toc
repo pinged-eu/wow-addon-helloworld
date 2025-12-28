@@ -1,4 +1,4 @@
-## Interface: 110207, 120000
+## Interface: 110207, 120001
 ## Title: Hello World |cfd9b9b9b(TheWarWithin)|r
 ## Title-deDE: Hallo Welt |cfd9b9b9b(TWW)|r
 ## Notes: A dummy HelloWorld addon to test Github with WoWUp
@@ -12,3 +12,4 @@
 embeds.xml
 Locales\Locales.xml
 HelloWorld.lua
+options\options.lua
