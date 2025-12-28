@@ -14,7 +14,7 @@ local defaults = {
 
 function HelloWorld:OnInitialize()
     -- Called when the addon is loaded
-    self:Print("OnInitialize..")
+    -- self:Print("OnInitialize..")
     self:Print(L["hello"](name))
     self:RegisterChatCommand("hw", "SlashCommand")
     self:RegisterChatCommand("helloworld", "SlashCommand")
@@ -46,7 +46,7 @@ function HelloWorld:SlashCommand(msg)
 end
 
 function HelloWorld:OnEnable()
-    self:Print("onEnable..")
+    -- self:Print("onEnable..")
     self:RegisterEvent("ZONE_CHANGED")
     self.db.char.money = GetMoney()
     --self.db.global.money[charName] = GetMoney()
