@@ -31,6 +31,7 @@ function HelloWorld:OnDisable()
 end
 
 function HelloWorld:ZONE_CHANGED()
+  if HelloWorld.enableZoneMessage then
     local thisZone = GetZoneText()
     local subzone = GetSubZoneText()
     -- self:Print("onZoneChanged..")
@@ -43,4 +44,5 @@ function HelloWorld:ZONE_CHANGED()
     if GetBindLocation() == subzone then
         self:Print(L["welcomeHome"](name))
     end
+  end
 end
