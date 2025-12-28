@@ -2,17 +2,18 @@
 
 -- Define the options table
 local options = {
-    {
-        type = "header",
-        name = "Hello World Options",
+  type="group",
+  name="Hello World Options",
+  desc="Options for the Hello World addon",
+  args={
+    enable = {
+      name = "Enable",
+      desc = "Enables / disables the addon",
+      type = "toggle",
+      set = function(info,val) HelloWorld.enabled = val end,
+      get = function(info) return HelloWorld.enabled end
     },
-    {
-        type = "checkbox",
-        name = "Enable addon",
-        desc = "Enable or disable the addon",
-        get = function() return true end,
-        set = function(value) end,
-    },
+  }
 }
 
 -- Register the options with the addon
@@ -22,6 +23,6 @@ function HelloWorld:RegisterOptions()
 end
 
 -- Initialize the addon
-function HelloWorld:Initialize()
-    self:RegisterOptions()
+function HelloWorld:OnInitialize()
+  self:RegisterOptions()
 end
