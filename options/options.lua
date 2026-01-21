@@ -2,26 +2,19 @@
 
 -- Define the options table
 local options = {
-  type="group",
-  name="Hello World Options",
-  desc="Options for the Hello World addon",
-  args={
-    enable = {
-      name = "Enable",
-      desc = "Enables / disables the addon",
-      type = "toggle",
-      set = function(info,val) HelloWorld.enabled = val end,
-      get = function(info) return HelloWorld.enabled end
-    },
+  type = "group",
+  name = "Hello World Options",
+  desc = "Options for the Hello World addon",
+  args = {
     enableZoneMessages = {
       name = "Enable Zone Messages",
       desc = "Enables / disables the zone messages",
       type = "toggle",
       set = function(info, val)
-          HelloWorld.db.profile.enableZoneMessage = val
+        HelloWorld.db.profile.enableZoneMessage = val
       end,
       get = function(info)
-          return HelloWorld.db.profile.enableZoneMessage
+        return HelloWorld.db.profile.enableZoneMessage
       end
     },
   }
@@ -29,6 +22,6 @@ local options = {
 
 -- Register the options with the addon
 function HelloWorld:RegisterOptions()
-    LibStub("AceConfig-3.0"):RegisterOptionsTable("HelloWorld", options)
-    LibStub("AceConfigDialog-3.0"):AddToBlizOptions("HelloWorld", "Hello World")
+  LibStub("AceConfig-3.0"):RegisterOptionsTable("HelloWorld", options)
+  LibStub("AceConfigDialog-3.0"):AddToBlizOptions("HelloWorld", "Hello World")
 end
