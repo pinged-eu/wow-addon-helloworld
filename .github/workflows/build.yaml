@@ -5,8 +5,17 @@ on:
   workflow_call:
 
 jobs:
+  license-check:
+    name: license check
+    runs-on: ubuntu-24.04
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v6
+      - name: REUSE Compliance Check
+        uses: fsfe/reuse-action@v6
   j1:
     name: build addon
+    needs: license-check
     runs-on: windows-2025
     env:
       ZIPFILENAME: "helloworld-addon.zip"

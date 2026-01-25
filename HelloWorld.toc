@@ -1,6 +1,6 @@
 ## Interface: 120000, 120001
-## Title: Hello World |cfd9b9b9b(TheWarWithin)|r
-## Title-deDE: Hallo Welt |cfd9b9b9b(TWW)|r
+## Title: Hello World |cfd9b9b9b(Midnight)|r
+## Title-deDE: Hallo Welt |cfd9b9b9b(Midnight)|r
 ## Notes: A dummy HelloWorld addon to test Github with WoWUp
 ## Notes-deDE: Ein kleines Grüßer-Addon.
 ## Author: Lexxy23
