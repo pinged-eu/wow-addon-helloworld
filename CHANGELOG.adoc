@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+== [Unreleased]
+
+=== Added
+
+- Add license check (#25)
+
+=== Changed
+
+- Update TOC to v12.0.0 (was 11.2.7 and 12.0.1 only)
+- Idea to support blizz options (#24)
+- Merge branch 'thewarwithin' into develop
+- 🔨 prepare next release
+
+=== Fixed
+
+- Fix options dialog
+
 == [11.2.7] - 2025-12-28
 
 === Changed
@@ -212,6 +229,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🎉 initial helloworld idea
 - Initial commit
 
+[unreleased]: https://github.com///compare/v11.2.7..HEAD
 [11.2.7]: https://github.com///compare/v11.2.5..v11.2.7
 [11.2.5]: https://github.com///compare/v11.2.0..v11.2.5
 [11.2.0]: https://github.com///compare/v11.1.7..v11.2.0
