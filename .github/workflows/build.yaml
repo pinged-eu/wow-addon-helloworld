@@ -15,6 +15,7 @@ jobs:
         uses: fsfe/reuse-action@v6
   j1:
     name: build addon
+    needs: license-check
     runs-on: windows-2025
     env:
       ZIPFILENAME: "helloworld-addon.zip"
