@@ -54,7 +54,6 @@ path = [
   "Makefile",
   "Cargo.lock",
   "REUSE.toml",
-  ".changelogs/*",
   "**/.containerignore",
   "**/.dockerignore",
   ".semver-version",
