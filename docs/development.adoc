@@ -18,12 +18,13 @@ Final deployable releases however are on their respective addon name branch:
 * cataclysm = the releases for WoW v4 Cataclysm
 * mop = the releases for WoW v5 Mists of Pandaria
 * thewarwithin = the releases for WoW v11 The War Within
+* midnight = the releases for WoW v12 Midnight
 
 To use the `git flow` feature, you can run this command to initialize it (while on the develop branch):
 
 [,shell]
 ----
-git flow init --feature=feat/ --bugfix=fix/ --release=release/ --tag="v"
+git-flow init --develop=develop --feature=feat/ --bugfix=fix/ --release=release/ --tag="v" --main=midnight
 ----
 
 The "next release" branch is _develop_.
