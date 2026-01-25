@@ -20,7 +20,7 @@ Final deployable releases however are on their respective addon name branch:
 * thewarwithin = the releases for WoW v11 The War Within
 * midnight = the releases for WoW v12 Midnight
 
-To use the `git flow` feature, you can run this command to initialize it (while on the develop branch):
+To use the `git-flow` feature, you can run this command to initialize it (while on the develop branch):
 
 [,shell]
 ----
@@ -50,19 +50,19 @@ To manually merge it into the develop branch:
 
 [,shell]
 ----
-git flow feature finish <feature-name>
+git-flow feature finish <feature-name>
 ----
 
 NOTE: This should be done automatically by the CI/CD pipeline after some review.
 
 == Adding fixes
 
-Fixes should be done against the current live branch (say, thewarwithin currently). The branch name must be fix/FIXNAMEORID. It should be applied against the current live branch, as well as the develop branch.
+Fixes should be done against the current live branch (say, midnight currently). The branch name must be fix/FIXNAMEORID. It should be applied against the current live branch, as well as the develop branch.
 
 include::localization.adoc[leveloffset=+1]
 
 == Adding new translations
 
-Translations should be done against the current live branch (say, thewarwithin currently). The branch name must be i18n/TRANSLATIONNAMEORID. It should be applied against the current live branch, as well as the develop branch.
+Translations should be done against the current live branch (say, midnight currently). The branch name must be i18n/TRANSLATIONNAMEORID. It should be applied against the current live branch, as well as the develop branch.
 
 include::localization.adoc[leveloffset=+1]
