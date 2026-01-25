@@ -6,16 +6,29 @@ SPDX-PackageSupplier = "DS/2, Dirk Strauss"
 # Your project sources
 [[annotations]]
 path = [
-"embeds.xml"
+"embeds.xml",
 "assets/**",
 "options/**",
 "Locales/**",
+"Libs/downloadAceLibs.ps1",
 "raid-log-window/**",
 "HelloWorld*",
+"settings.lua",
+"install.develop.ps1",
 ]
 precedence = "closest"
 SPDX-FileCopyrightText = "DS/2, Dirk Strauss"
 SPDX-License-Identifier = "GPL-3.0-or-later"
+
+# external ace3 lib
+[[annotations]]
+path = [
+"Libs/Ace3/**",
+]
+precedence = "closest"
+SPDX-FileCopyrightText = "Ace3 Development Team"
+# technically this is not a BSD4 license since the ace team added at point 3 a disclaimer to not use this product as standalone. Apart from that it is a BSD4 license.
+SPDX-License-Identifier = "BSD-4-Clause"
 
 # Documentations and Configs
 [[annotations]]
@@ -73,6 +86,8 @@ path = [
   "**/BUILD.bazel",
   "**/BUILD.bazel.lock",
   "Dockerfile.dapper",
+  ".jj/**",
+  ".crush/**",
 ]
 SPDX-FileCopyrightText = "NONE"
 SPDX-License-Identifier = "CC0-1.0"
