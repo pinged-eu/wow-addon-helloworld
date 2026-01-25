@@ -17,6 +17,8 @@ jobs:
         run: |
           Remove-Item -Recurse helloworld -ErrorAction Continue
           Remove-Item $Env:ZIPFILENAME -ErrorAction Continue
+      - name: REUSE Compliance Check
+        uses: fsfe/reuse-action@v6
       - name: create tmp zip dir
         run: |
           $loc = Get-Location
