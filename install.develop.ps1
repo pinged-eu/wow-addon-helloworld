@@ -14,7 +14,11 @@ function Test-IsAdmin
 }
 
 # this directory here
-$myAddonDir = Get-Location
+if ($PSScriptRoot) {
+  $myAddonDir = $PSScriptRoot
+} else {
+  $myAddonDir = Get-Location
+}
 
 # check if directory exists
 if (!(Test-Path "$wowDirectory"))
