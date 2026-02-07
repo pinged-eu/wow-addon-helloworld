@@ -1,4 +1,4 @@
-## Interface: 20504
+## Interface: 20505
 ## Title: Hello World Addon |cfd9b9b9b(TBC)|r
 ## Title-deDE: Hallo Welt |cfd9b9b9b(TBC)|r
 ## Notes: A dummy HelloWorld addon to test GitHub with WoWUp
