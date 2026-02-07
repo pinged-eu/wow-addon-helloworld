@@ -1,3 +1,16 @@
 = Installation
 
-Via https://www.wowup.io[WoWUp]: use our Github URL from above to install the addon via URL.
+== WoWUp
+
+Via https://www.wowup.io[WoWUp]: use our GitHub URL from the Releases page to install the addon via URL.
+
+For example, copy the ZIP URL from the latest GitHub release asset, which will look similar to:
+https://github.com/pinged-eu/wow-addon-helloworld/releases/download/vX.Y.Z/HelloWorld-vX.Y.Z.zip
+
+* In the left sidebar, click `Install Addons`
+* In the top bar, click `Install from URL`
+* Paste the release download URL into the `URL` field
+* Click `Import`
+** This downloads the ZIP file and shows the addon metadata
+* Click `Install`
+** This installs the addon
