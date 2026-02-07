@@ -4,7 +4,7 @@
 
 Via https://www.wowup.io[WoWUp]: use our GitHub URL from the Releases page to install the addon via URL.
 
-Ex. copy the ZIP URL from the latest GitHub release asset, which will look similar to:
+For example, copy the ZIP URL from the latest GitHub release asset, which will look similar to:
 https://github.com/pinged-eu/wow-addon-helloworld/releases/download/vX.Y.Z/HelloWorld-vX.Y.Z.zip
 
 * In the left sidebar, click `Install Addons`
