@@ -2,7 +2,7 @@
 
 == WoWUp
 
-Via https://www.wowup.io[WoWUp]: use our Github URL from the Releases page to install the addon via URL.
+Via https://www.wowup.io[WoWUp]: use our GitHub URL from the Releases page to install the addon via URL.
 
 Ex. https://github.com/pinged-eu/wow-addon-helloworld/releases/download/v12.0.0/HelloWorld-v12.0.0.zip
 
