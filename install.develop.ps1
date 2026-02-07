@@ -2,7 +2,7 @@
 # This script installs the addon in development mode. Use -Information or -Verbose for logging.
 param(
   [string]$wowDirectory = "C:\BNetGames\World of Warcraft",
-  [string]$linkType="SymbolicLink" # can be SymbolicLink, HardLink or Junction; Cata Classic seems to only take HardLinks for granted
+  [string]$linkType="SymbolicLink" # can be SymbolicLink or Junction
 )
 
 # create method Test-IsAdmin; returns boolean
