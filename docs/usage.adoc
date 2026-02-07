@@ -7,10 +7,10 @@ Via https://www.wowup.io[WoWUp]: use our GitHub URL from the Releases page to in
 Ex. copy the ZIP URL from the latest GitHub release asset, which will look similar to:
 https://github.com/pinged-eu/wow-addon-helloworld/releases/download/vX.Y.Z/HelloWorld-vX.Y.Z.zip
 
-* click on the left side on `Install Addons`
-* click above on `Install from URL`
-* paste the URL from above into the `URL` field
-* click on `Import`
-** this will download the zip file and present you with the metadata
-* click on `Install`
-** this will finally install the addon
+* In the left sidebar, click `Install Addons`
+* In the top bar, click `Install from URL`
+* Paste the release download URL into the `URL` field
+* Click `Import`
+** This downloads the ZIP file and shows the addon metadata
+* Click `Install`
+** This installs the addon
