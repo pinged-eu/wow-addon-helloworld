@@ -24,8 +24,8 @@ jobs:
         uses: actions/checkout@v6
       - name: clean and prepare
         run: |
-          Remove-Item -Recurse helloworld -ErrorAction Continue
-          Remove-Item $Env:ZIPFILENAME -ErrorAction Continue
+          Remove-Item -Recurse helloworld -ErrorAction Ignore
+          Remove-Item $Env:ZIPFILENAME -ErrorAction Ignore
       - name: create tmp zip dir
         run: |
           $loc = Get-Location
