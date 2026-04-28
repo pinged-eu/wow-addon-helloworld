@@ -11,7 +11,7 @@ Set-StrictMode -Version 2.0
 Write-Host "Downloading AceLibs from $AceUrl..."
 
 # Download latest acelib from website, follow redirects
-Invoke-WebRequest -Uri $AceUrl -MaximumRedirection 15 -OutFile "$PSScriptRoot/AceLibs.zip" -ConnectionTimeoutSeconds 15 -OperationTimeoutSeconds 9 -MaximumRetryCount 3 -RetryIntervalSec 5 -verbose
+Invoke-WebRequest -Uri $AceUrl -MaximumRedirection 15 -OutFile "$PSScriptRoot/AceLibs.zip" -MaximumRetryCount 3 -RetryIntervalSec 5 -verbose
 
 Write-Host "Extracting AceLibs..."
 # Extract downloaded zip file
