@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+== [12.0.5] - 2026-04-28
+
+=== Added
+
+- Add codeowners, and empty gitlab config
+
+=== Changed
+
+- 🔖 bump version to 12.0.5
+- Use fixed runner version (#32)
+- Update toc to WoW v12.0.5
+- 🔨 bump actions/upload-artifact from 6 to 7
+- Merge branch 'release/12.0.1' into develop
+- 🔨 prepare next release
+
 == [12.0.1] - 2026-02-07
 
 === Added
@@ -247,6 +262,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🎉 initial helloworld idea
 - Initial commit
 
+[12.0.5]: https://github.com///compare/v12.0.1..v12.0.5
 [12.0.1]: https://github.com///compare/v12.0.0..v12.0.1
 [12.0.0]: https://github.com///compare/v11.2.7..v12.0.0
 [11.2.7]: https://github.com///compare/v11.2.5..v11.2.7
