@@ -21,7 +21,7 @@ end_of_line = crlf
 end_of_line = crlf
 
 [*.ps1]
-end_of_line = crlf
+end_of_line = lf
 
 [*.ics]
 end_of_line = crlf

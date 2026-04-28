@@ -49,7 +49,7 @@ google-services.json filter=git-crypt diff=git-crypt
 *.{cmd,[cC][mM][dD]} text eol=crlf
 *.{bat,[bB][aA][tT]} text eol=crlf
 *.{ics,[iI][cC][sS]} text eol=crlf
-*.ps1 text eol=crlf
+*.ps1 text eol=lf
 
 # MacOS
 *.plist text eol=lf
