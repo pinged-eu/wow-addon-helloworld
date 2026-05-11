@@ -1,4 +1,4 @@
-## Interface: 120005
+## Interface: 120007, 120005
 ## Title: Hello World |cffa335ee(Midnight)|r
 ## Title-deDE: Hallo Welt |cffa335ee(Midnight)|r
 ## Notes: A dummy HelloWorld addon to test Github with WoWUp
