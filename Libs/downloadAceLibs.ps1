@@ -15,7 +15,7 @@ Write-Host "Downloading AceLibs from $AceUrl..."
 # Download latest acelib from website, follow redirects
 # Prefer aria2c if available, fall back to Invoke-WebRequest
 $zipPath = "$PSScriptRoot/AceLibs.zip"
-$useAria2 = (-not $UseWebRequest) -and (Get-Command aria2c -ErrorAction Ignore)
+$useAria2 = (-not $UseWebRequest) -and ($null -ne (Get-Command aria2c -CommandType Application -ErrorAction Ignore))
 if ($useAria2) {
   Write-Host "  -> using aria2c"
   & aria2c --max-connection-per-server=4 --split=4 --max-tries=5 --retry-wait=5 --allow-overwrite=true --log="$PSScriptRoot/.aria2c.log" --dir="$PSScriptRoot" --out="AceLibs.zip" "$AceUrl"
