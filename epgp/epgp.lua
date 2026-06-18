@@ -5,28 +5,107 @@
 
 local EPGP = {}
 
---- Use TooltipDataProcessor (retail 10.0+) to inject GP info on chest items.
+--- Use TooltipDataProcessor (retail 10.0+) to inject GP info on items.
 -- For Classic (pre-10.0), use: GameTooltip:HookScript("OnTooltipSetItem", ...)
-TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tooltip)
-    -- Get the item link from the tooltip
-    local itemLink = select(2, tooltip:GetItem())
-    if not itemLink then
-        return
+TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tooltip, data)
+  -- print("TooltipDataProcessor: " .. tostring(tooltip) .. ", " .. tostring(data))
+    -- data contains the item info directly (no need for tooltip:GetItem())
+    -- if tooltip == GameTooltip then
+    --     print("OnTooltipSetItem", tooltip, data)
+    -- end
+    if not data or not data.itemID then
+      -- print("Nix itemID")
+      return
     end
 
-    -- Extract the item ID from the hyperlink
-    local itemID = tonumber(itemLink:match("item:(%d+)"))
-    if not itemID then
-        return
-    end
+    local itemID = data.itemID
+    print("itemID", itemID)
 
     -- Retrieve the equip slot (index 9). By the time this fires,
     -- the item info is guaranteed to be cached, so this is safe.
-    local equipSlot = select(9, GetItemInfo(itemID))
-    if equipSlot ~= "INVTYPE_CHEST" then
+    local slotValue = EPGP:GetSlotValue(itemID)
+    if slotValue == 0 then
         return
     end
 
     -- Add the GP line to the tooltip
-    tooltip:AddLine("GP: 0", 1, 1, 1)
+    tooltip:AddLine("GP: " .. EPGP:calculateGP(itemID, slotValue), 1, 1, 1)
 end)
+
+-- Calculates the GP value for a given item ID.
+function EPGP:calculateGP(itemID)
+    local gp = 0
+    -- based on wowpedia: GP = item value^2 x 0.04 x slot value
+    return gp
+end
+
+-- Slot value multiplier used in the EPGP formula.
+-- Slot value = 1 for head, chest, legs, 2-handed weapons.
+-- Slot value = 0.777 for shoulders, hands, waist, feet.
+-- Slot value = 0 for all other slots (placeholder).
+local SLOT_VALUE = {
+  ["INVTYPE_HEAD"]       = 1,
+  ["INVTYPE_CHEST"]      = 1,
+  ["INVTYPE_LEGS"]       = 1,
+  ["INVTYPE_2HWEAPON"]  = 1,
+  ["INVTYPE_SHOULDER"]   = 0.777,
+  ["INVTYPE_HAND"]       = 0.777,
+  ["INVTYPE_WAIST"]      = 0.777,
+  ["INVTYPE_FEET"]       = 0.777,
+  ["INVTYPE_TRINKET"]  = 0.7,
+    ["INVTYPE_WRIST"]    = 0.55,
+    ["INVTYPE_NECK"]     = 0.55,
+    ["INVTYPE_BACK"]     = 0.55,
+    ["INVTYPE_FINGER"]   = 0.55,
+    ["INVTYPE_OFFHAND"]  = 0.55,
+  ["INVTYPE_SHIELD"]   = 0.55,
+  ["INVTYPE_1HWEAPON"] = 0.42,
+  ["INVTYPE_RANGEDRIGHT"] = 0.42,
+  ["INVTYPE_RANGED"] = 0.42,
+  ["INVTYPE_WAND"] = 0.42,
+}
+
+function EPGP:GetSlotValue(itemId)
+    local equipSlot = select(9, GetItemInfo(itemId))
+    return SLOT_VALUE[equipSlot] or 0
+end
+
+function EPGP:GetItemValue(itemId)
+    -- Item quality IDs (0-based, from select(3, GetItemInfo)):
+    --   0 = poor, 1 = common, 2 = uncommon (green)
+    --   3 = rare (blue), 4 = epic (purple), 5 = legendary (orange)
+    --
+    -- Formulas:
+    --   Uncommon: (itemLevel - 4)     / 2
+    --   Rare:     (itemLevel - 1.84)  / 1.6
+    --   Epic:     (itemLevel - 1.3)   / 1.3
+    --   Legendary:(itemLevel - 1.2)   / 1.2
+    --   Anything else -> 0
+    if not C_Item.IsItemDataCachedByID(itemId) then
+        return 0
+    end
+    local itemInfo = C_Item.GetItemInfo(itemId)
+
+    local itemLevel = select(4, itemInfo)
+    local itemQuality = select(3, itemInfo)
+    if not itemLevel then
+        return 0
+    end
+
+    local itemValue = 0
+    if itemQuality == 2 then         -- uncommon (green)
+        itemValue = (itemLevel - 4) / 2
+    elseif itemQuality == 3 then     -- rare (blue)
+        itemValue = (itemLevel - 1.84) / 1.6
+    elseif itemQuality == 4 then     -- epic (purple)
+        itemValue = (itemLevel - 1.3) / 1.3
+    elseif itemQuality == 5 then     -- legendary (orange)
+        itemValue = (itemLevel - 1.2) / 1.2
+    end
+    return itemValue
+end
+
+function EPGP:OnInitialize()
+    -- Initialize any necessary state or data here
+
+end
