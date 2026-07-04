@@ -84,7 +84,7 @@ function EPGP:GetItemValue(itemId)
     if not C_Item.IsItemDataCachedByID(itemId) then
         return 0
     end
-    local _, _, itemQuality, itemLevel = C_Item.GetItemInfo(itemId)
+    local _, _, itemQuality, itemLevel = GetItemInfo(itemId)
     if not itemLevel then
         return 0
     end
