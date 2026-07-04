@@ -1,6 +1,6 @@
 --[[-----------------------------------------------------------------------------
     EPGP Integration for HelloWorld
-    Adds GP (Gear Points) tooltip lines for chest items.
+    Adds GP (Gear Points) tooltip lines for equippable items.
 -------------------------------------------------------------------------------]]
 
 local EPGP = {}
