@@ -19,8 +19,6 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tool
     end
 
     local itemID = data.itemID
-    print("itemID", itemID)
-
     -- Retrieve the equip slot (index 9). By the time this fires,
     -- the item info is guaranteed to be cached, so this is safe.
     local slotValue = EPGP:GetSlotValue(itemID)
