@@ -66,7 +66,7 @@ local SLOT_VALUE = {
 }
 
 function EPGP:GetSlotValue(itemId)
-    local equipSlot = select(9, GetItemInfo(itemId))
+    local equipSlot = select(9, C_Item.GetItemInfo(itemId))
     return SLOT_VALUE[equipSlot] or 0
 end
 
