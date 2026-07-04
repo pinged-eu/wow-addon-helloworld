@@ -39,10 +39,10 @@ function EPGP:calculateGP(itemID, slotValue)
     return math.floor((itemValue * itemValue) * 0.04 * slotValue + 0.5)
 end
 
--- Slot value multiplier used in the EPGP formula.
--- Slot value = 1 for head, chest, legs, 2-handed weapons.
--- Slot value = 0.777 for shoulders, hands, waist, feet.
--- Slot value = 0 for all other slots (placeholder).
+-- Slot value multiplier used in the EPGP formula (defaults to 0 for unsupported slots).
+-- Common multipliers:
+--   1.0   = head, chest, legs, 2-handed weapons
+--   0.777 = shoulders, hands, waist, feet
 local SLOT_VALUE = {
   ["INVTYPE_HEAD"]       = 1,
   ["INVTYPE_CHEST"]      = 1,
