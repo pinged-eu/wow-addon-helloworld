@@ -31,10 +31,13 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tool
 end)
 
 -- Calculates the GP value for a given item ID.
-function EPGP:calculateGP(itemID)
-    local gp = 0
-    -- based on wowpedia: GP = item value^2 x 0.04 x slot value
-    return gp
+function EPGP:calculateGP(itemID, slotValue)
+    local itemValue = self:GetItemValue(itemID)
+    if itemValue == 0 then
+        return 0
+    end
+    -- wowpedia: GP = itemValue^2 * 0.04 * slotValue
+    return math.floor((itemValue * itemValue) * 0.04 * slotValue + 0.5)
 end
 
 -- Slot value multiplier used in the EPGP formula.
