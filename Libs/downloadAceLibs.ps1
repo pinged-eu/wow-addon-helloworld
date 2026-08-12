@@ -23,7 +23,23 @@ if ($useAria2) {
 } else {
   $msg = if ($UseWebRequest) { "  -> using Invoke-WebRequest (forced via -UseWebRequest)" } else { "  -> using Invoke-WebRequest (install aria2 for faster downloads)" }
   Write-Host $msg
-  Invoke-WebRequest -Uri $AceUrl -MaximumRedirection 15 -OutFile "$zipPath" -MaximumRetryCount 3 -RetryIntervalSec 5 -verbose
+  $maxRetries = 3
+  $retryDelaySec = 5
+  $downloaded = $false
+  for ($retry = 0; $retry -le $maxRetries; $retry++) {
+    try {
+      Invoke-WebRequest -Uri $AceUrl -MaximumRedirection 15 -OutFile "$zipPath" -ErrorAction Stop
+      $downloaded = $true
+      break
+    } catch {
+      if ($retry -lt $maxRetries) {
+        Write-Warning "Download failed (attempt $($retry+1)/$($maxRetries+1)). Retrying in ${retryDelaySec}s..."
+        Start-Sleep -Seconds $retryDelaySec
+      } else {
+        throw
+      }
+    }
+  }
 }
 
 Write-Host "Extracting AceLibs..."
