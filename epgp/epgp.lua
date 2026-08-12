@@ -84,12 +84,16 @@ function EPGP:GetItemValue(itemId)
     if not C_Item.IsItemDataCachedByID(itemId) then
         return 0
     end
-    local _, _, itemQuality, itemLevel = GetItemInfo(itemId)
+    local _, _, itemQuality, itemLevel = C_Item.GetItemInfo(itemId)
     if not itemLevel then
         return 0
     end
 
     local itemValue = 0
+    if itemQuality == 0 or itemQuality == 1 then
+      -- gray and white items
+        return 0
+    end
     if itemQuality == 2 then         -- uncommon (green)
         itemValue = (itemLevel - 4) / 2
     elseif itemQuality == 3 then     -- rare (blue)
@@ -98,6 +102,10 @@ function EPGP:GetItemValue(itemId)
         itemValue = (itemLevel - 1.3) / 1.3
     elseif itemQuality == 5 then     -- legendary (orange)
         itemValue = (itemLevel - 1.2) / 1.2
+    elseif itemQuality == 6 then     -- artifact (legion?)
+        itemValue = 0
+    else
+      print("Undefined quality: ", itemQuality)
     end
     return itemValue
 end
