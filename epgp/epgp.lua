@@ -8,7 +8,7 @@ local EPGP = {}
 --- Use TooltipDataProcessor (retail 10.0+) to inject GP info on items.
 -- For Classic (pre-10.0), use: GameTooltip:HookScript("OnTooltipSetItem", ...)
 TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tooltip, data)
-  -- print("TooltipDataProcessor: " .. tostring(tooltip) .. ", " .. tostring(data))
+    -- print("TooltipDataProcessor: " .. tostring(tooltip) .. ", " .. tostring(data))
     -- data contains the item info directly (no need for tooltip:GetItem())
     -- if tooltip == GameTooltip then
     --     print("OnTooltipSetItem", tooltip, data)
@@ -18,7 +18,7 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tool
         return
     end
 
-    -- Retrieve the equip slot (index 9). By the time this fires,
+    -- Retrieve the equip slot. By the time this fires,
     -- the item info is guaranteed to be cached, so this is safe.
     local slotValue = EPGP:GetSlotValue(itemID)
     if slotValue == 0 then
@@ -44,29 +44,37 @@ end
 --   1.0   = head, chest, legs, 2-handed weapons
 --   0.777 = shoulders, hands, waist, feet
 local SLOT_VALUE = {
-  ["INVTYPE_HEAD"]       = 1,
-  ["INVTYPE_CHEST"]      = 1,
-  ["INVTYPE_LEGS"]       = 1,
-  ["INVTYPE_2HWEAPON"]  = 1,
-  ["INVTYPE_SHOULDER"]   = 0.777,
-  ["INVTYPE_HAND"]       = 0.777,
-  ["INVTYPE_WAIST"]      = 0.777,
-  ["INVTYPE_FEET"]       = 0.777,
-  ["INVTYPE_TRINKET"]  = 0.7,
-    ["INVTYPE_WRIST"]    = 0.55,
-    ["INVTYPE_NECK"]     = 0.55,
-    ["INVTYPE_BACK"]     = 0.55,
-    ["INVTYPE_FINGER"]   = 0.55,
-    ["INVTYPE_OFFHAND"]  = 0.55,
-  ["INVTYPE_SHIELD"]   = 0.55,
-  ["INVTYPE_1HWEAPON"] = 0.42,
-  ["INVTYPE_RANGEDRIGHT"] = 0.42,
-  ["INVTYPE_RANGED"] = 0.42,
-  ["INVTYPE_WAND"] = 0.42,
+    ["INVTYPE_HEAD"]           = 1,
+    ["INVTYPE_CHEST"]          = 1,
+    ["INVTYPE_LEGS"]           = 1,
+    ["INVTYPE_2HWEAPON"]       = 1,
+    ["INVTYPE_SHOULDER"]       = 0.777,
+    ["INVTYPE_HAND"]           = 0.777,
+    ["INVTYPE_WAIST"]          = 0.777,
+    ["INVTYPE_FEET"]           = 0.777,
+    ["INVTYPE_TRINKET"]        = 0.7,
+    ["INVTYPE_WRIST"]          = 0.55,
+    ["INVTYPE_NECK"]           = 0.55,
+    ["INVTYPE_BACK"]           = 0.55,
+    ["INVTYPE_FINGER"]         = 0.55,
+    ["INVTYPE_OFFHAND"]        = 0.55,
+    ["INVTYPE_SHIELD"]         = 0.55,
+    ["INVTYPE_1HWEAPON"]       = 0.42,
+    ["INVTYPE_RANGEDRIGHT"]    = 0.42,
+    ["INVTYPE_RANGED"]         = 0.42,
+    ["INVTYPE_WAND"]           = 0.42,
+    ["INVTYPE_HOLDABLE"]       = 0.55,
+    ["INVTYPE_WEAPONMAINHAND"] = 0.42,
+    ["INVTYPE_WEAPONOFFHAND"]  = 0.42,
+    ["INVTYPE_THROWN"]         = 0.42,
+    ["INVTYPE_RELIC"]          = 0.42,
 }
 
 function EPGP:GetSlotValue(itemId)
-    local equipSlot = select(9, C_Item.GetItemInfo(itemId))
+    if not C_Item.IsItemDataCachedByID(itemId) then
+        return 0
+    end
+    local equipSlot = select(10, C_Item.GetItemInfo(itemId))
     return SLOT_VALUE[equipSlot] or 0
 end
 
@@ -91,26 +99,21 @@ function EPGP:GetItemValue(itemId)
 
     local itemValue = 0
     if itemQuality == 0 or itemQuality == 1 then
-      -- gray and white items
+        -- gray and white items
         return 0
     end
-    if itemQuality == 2 then         -- uncommon (green)
+    if itemQuality == 2 then     -- uncommon (green)
         itemValue = (itemLevel - 4) / 2
-    elseif itemQuality == 3 then     -- rare (blue)
+    elseif itemQuality == 3 then -- rare (blue)
         itemValue = (itemLevel - 1.84) / 1.6
-    elseif itemQuality == 4 then     -- epic (purple)
+    elseif itemQuality == 4 then -- epic (purple)
         itemValue = (itemLevel - 1.3) / 1.3
-    elseif itemQuality == 5 then     -- legendary (orange)
+    elseif itemQuality == 5 then -- legendary (orange)
         itemValue = (itemLevel - 1.2) / 1.2
-    elseif itemQuality == 6 then     -- artifact (legion?)
+    elseif itemQuality == 6 then -- artifact (legion?)
         itemValue = 0
     else
-      print("Undefined quality: ", itemQuality)
+        print("Undefined quality: " .. tostring(itemQuality))
     end
     return itemValue
-end
-
-function EPGP:OnInitialize()
-    -- Initialize any necessary state or data here
-
 end
