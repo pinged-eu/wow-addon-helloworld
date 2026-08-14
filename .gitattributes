@@ -18,39 +18,58 @@ aws_sec*.properties filter=git-crypt diff=git-crypt
 secrets/** filter=git-crypt diff=git-crypt
 google-services.json filter=git-crypt diff=git-crypt
 
-# LFS binary files
-*.ttf binary
-*.woff binary
-*.woff2 binary
-*.png binary
-*.gif binary
-*.ico binary
-*.jpg binary
-*.webp binary
+# binary files: use binary by default, since jj does not know lfs; replace binary with: filter=lfs diff=lfs merge=lfs -text
+*.bin filter=lfs diff=lfs merge=lfs -text
+*.jar filter=lfs diff=lfs merge=lfs -text
+*.pdf filter=lfs diff=lfs merge=lfs -text
+*.war filter=lfs diff=lfs merge=lfs -text
+*.ttf filter=lfs diff=lfs merge=lfs -text
+*.eot filter=lfs diff=lfs merge=lfs -text
+*.ipa filter=lfs diff=lfs merge=lfs -text
+*.woff filter=lfs diff=lfs merge=lfs -text
+*.woff2 filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+*.ico filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.webp filter=lfs diff=lfs merge=lfs -text
 *.svg text
 *.xml text
 *.json text
 *.adoc text
 *.toml text
-*.gpg binary
+*.gpg filter=lfs diff=lfs merge=lfs -text
+
+# Archives
+*.gz filter=lfs diff=lfs merge=lfs -text
+*.tgz filter=lfs diff=lfs merge=lfs -text
 
 # WoW Addon Development
 *.lua text
 *.toc text
 
 # OpenOffice, LibreOffice
-*.odg binary
-*.doc binary
+*.odg filter=lfs diff=lfs merge=lfs -text
+*.doc filter=lfs diff=lfs merge=lfs -text
+*.odt filter=lfs diff=lfs merge=lfs -text
+*.xls filter=lfs diff=lfs merge=lfs -text
+*.ods filter=lfs diff=lfs merge=lfs -text
+*.odp filter=lfs diff=lfs merge=lfs -text
 
 # Linux/Unix
 *.sh text eol=lf
 
 # Windows CRLF
-*.{cmd,[cC][mM][dD]} text eol=crlf
-*.{bat,[bB][aA][tT]} text eol=crlf
-*.{ics,[iI][cC][sS]} text eol=crlf
+*.[cC][mM][dD] text eol=crlf
+*.[bB][aA][tT] text eol=crlf
+*.[iI][cC][sS] text eol=crlf
 *.ps1 text eol=lf
 
 # MacOS
 *.plist text eol=lf
-*.DS_Store binary
+*.DS_Store filter=lfs diff=lfs merge=lfs -text
+
+# if you change something here: git add --renormalize .
+# to update any historical mappings (and rewrite history!!): 
+#   git commit -m 'build(gitattributes): update mappings'
+#   git lfs track "*.psd" && git lfs migrate import --include="*.psd" --everything
