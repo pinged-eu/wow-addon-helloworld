@@ -5,10 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-== [Unreleased]
+== [12.1.0] - 2026-08-14
 
 === Changed
 
+- 🔖 bump version to 12.1.0
 - Upgrade TOC to WoW v12.1.0 (#39)
 - Update TOC to only use 12.0.7 (#38)
 - ⬆️ Update actions/checkout action to v7 (#35)
@@ -283,7 +284,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🎉 initial helloworld idea
 - Initial commit
 
-[unreleased]: https://github.com///compare/v12.0.5..HEAD
+[12.1.0]: https://github.com///compare/v12.0.5..v12.1.0
 [12.0.5]: https://github.com///compare/v12.0.1..v12.0.5
 [12.0.1]: https://github.com///compare/v12.0.0..v12.0.1
 [12.0.0]: https://github.com///compare/v11.2.7..v12.0.0
