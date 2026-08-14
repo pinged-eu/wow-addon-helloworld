@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+== [Unreleased]
+
+=== Changed
+
+- Upgrade TOC to WoW v12.1.0 (#39)
+- Update TOC to only use 12.0.7 (#38)
+- ⬆️ Update actions/checkout action to v7 (#35)
+- Update TOC for WoW v12.0.7 (#34)
+- Ps1 files should have eol LF
+- Update ace3 lib to r1390
+- Merge branch 'midnight' into develop
+- Merge branch 'release/12.0.5' into midnight
+- 🔨 prepare next release
+
+=== Fixed
+
+- Readd icon (#41)
+- Download timeout was too short
+
 == [12.0.5] - 2026-04-28
 
 === Added
@@ -18,6 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update toc to WoW v12.0.5
 - 🔨 bump actions/upload-artifact from 6 to 7
 - Merge branch 'release/12.0.1' into develop
+- Update addon icon for better visual clarity
+- Merge branch 'release/12.0.1' into midnight
 - 🔨 prepare next release
 
 == [12.0.1] - 2026-02-07
@@ -262,6 +283,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🎉 initial helloworld idea
 - Initial commit
 
+[unreleased]: https://github.com///compare/v12.0.5..HEAD
 [12.0.5]: https://github.com///compare/v12.0.1..v12.0.5
 [12.0.1]: https://github.com///compare/v12.0.0..v12.0.1
 [12.0.0]: https://github.com///compare/v11.2.7..v12.0.0
