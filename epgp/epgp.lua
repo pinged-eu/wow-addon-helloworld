@@ -5,15 +5,23 @@
 
 local EPGP = {}
 
---- Use TooltipDataProcessor (retail 10.0+) to inject GP info on items.
--- For Classic (pre-10.0), use: GameTooltip:HookScript("OnTooltipSetItem", ...)
-TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tooltip, data)
-    -- print("TooltipDataProcessor: " .. tostring(tooltip) .. ", " .. tostring(data))
-    -- data contains the item info directly (no need for tooltip:GetItem())
-    -- if tooltip == GameTooltip then
-    --     print("OnTooltipSetItem", tooltip, data)
-    -- end
-    local itemID = data and (data.id or data.itemID)
+-- Compatibility layer: retail (10.0+) exposes C_Item.*, older/Classic clients
+-- (e.g. Burning Crusade Classic) only have the classic global API.
+local GetItemInfoCompat = (C_Item and C_Item.GetItemInfo) or GetItemInfo
+local IsItemDataCachedCompat = (C_Item and C_Item.IsItemDataCachedByID)
+    or function(itemId)
+        -- Classic API has no dedicated cache check; a successful GetItemInfo
+        -- call means the data is already cached client-side.
+        return GetItemInfo(itemId) ~= nil
+    end
+
+-- Shared handler that adds the GP tooltip line, used by both the retail and
+-- classic tooltip hooks below.
+local function AddGPLine(tooltip, itemID)
+    -- Respect the user's "Show GP on Item Tooltips" option (default: enabled)
+    if HelloWorld and HelloWorld.db and HelloWorld.db.profile.showGP == false then
+        return
+    end
     if not itemID then
         return
     end
@@ -31,7 +39,27 @@ TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tool
         return
     end
     tooltip:AddLine("GP: " .. gp, 1, 1, 1)
-end)
+end
+
+if TooltipDataProcessor and Enum and Enum.TooltipDataType then
+    --- Retail (10.0+): use TooltipDataProcessor to inject GP info on items.
+    TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Item, function(tooltip, data)
+        local itemID = data and (data.id or data.itemID)
+        AddGPLine(tooltip, itemID)
+    end)
+else
+    --- Classic (e.g. TBC/Wrath/Cata/Mists): no TooltipDataProcessor, fall
+    -- back to the classic OnTooltipSetItem hook and resolve the item ID from
+    -- the tooltip's item link.
+    GameTooltip:HookScript("OnTooltipSetItem", function(tooltip)
+        local _, itemLink = tooltip:GetItem()
+        if not itemLink then
+            return
+        end
+        local itemID = tonumber(itemLink:match("item:(%d+)"))
+        AddGPLine(tooltip, itemID)
+    end)
+end
 
 -- Calculates the GP value for a given item ID.
 function EPGP:calculateGP(itemID, slotValue)
@@ -75,10 +103,10 @@ local SLOT_VALUE = {
 }
 
 function EPGP:GetSlotValue(itemId)
-    if not C_Item.IsItemDataCachedByID(itemId) then
+    if not IsItemDataCachedCompat(itemId) then
         return 0
     end
-    local equipSlot = select(9, C_Item.GetItemInfo(itemId))
+    local equipSlot = select(9, GetItemInfoCompat(itemId))
     return SLOT_VALUE[equipSlot] or 0
 end
 
@@ -93,10 +121,10 @@ function EPGP:GetItemValue(itemId)
     --   Epic:     (itemLevel - 1.3)   / 1.3
     --   Legendary:(itemLevel - 1.2)   / 1.2
     --   Anything else -> 0
-    if not C_Item.IsItemDataCachedByID(itemId) then
+    if not IsItemDataCachedCompat(itemId) then
         return 0
     end
-    local _, _, itemQuality, itemLevel = C_Item.GetItemInfo(itemId)
+    local _, _, itemQuality, itemLevel = GetItemInfoCompat(itemId)
     if not itemLevel then
         return 0
     end
