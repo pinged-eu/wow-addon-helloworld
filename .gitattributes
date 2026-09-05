@@ -1,5 +1,5 @@
 # do not modify gitattributes
-.gitattributes text !filter !diff
+.gitattributes text -filter -diff
 
 # use LF for all text files
 * text=auto eol=lf
@@ -14,7 +14,7 @@ aws_sec*.properties filter=git-crypt diff=git-crypt
 *.key filter=git-crypt diff=git-crypt
 *.p7b filter=git-crypt diff=git-crypt
 *.asc filter=git-crypt diff=git-crypt
-*.afdesign filter=git-crypt diff=git-crypt
+*.afdesign binary filter=git-crypt diff=git-crypt
 secrets/** filter=git-crypt diff=git-crypt
 google-services.json filter=git-crypt diff=git-crypt
 
