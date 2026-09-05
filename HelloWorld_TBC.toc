@@ -8,7 +8,10 @@
 ## IconTexture: Interface/Addons/HelloWorld/assets/addon_icon_32.png
 ## DefaultState: enabled
 ## OptionalDeps: Ace3
+## SavedVariables: HelloWorldDb
 
 embeds.xml
 Locales\Locales.xml
 HelloWorld.lua
+options\options.lua
+epgp\epgp.xml
