@@ -9,6 +9,7 @@ local defaults = {
     profile = {
       optionA = true,
       enableZoneMessage = true, -- Default to enabled
+      showGP = true, -- Default to enabled
     }
 }
 
