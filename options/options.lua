@@ -17,6 +17,17 @@ local options = {
         return HelloWorld.db.profile.enableZoneMessage
       end
     },
+    showGP = {
+      name = "Show GP on Item Tooltips",
+      desc = "Enables / disables the EPGP Gear Points (GP) line shown on item tooltips",
+      type = "toggle",
+      set = function(info, val)
+        HelloWorld.db.profile.showGP = val
+      end,
+      get = function(info)
+        return HelloWorld.db.profile.showGP
+      end
+    },
   }
 }
 

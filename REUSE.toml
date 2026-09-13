@@ -10,6 +10,7 @@ path = [
 "assets/**",
 "options/**",
 "Locales/**",
+"epgp/**",
 "Libs/downloadAceLibs.ps1",
 "raid-log-window/**",
 "HelloWorld*",

@@ -21,7 +21,10 @@
     "ReloadUI",
     "IsSecureCmd",
     "NUM_CHAT_WINDOWS",
-    "ChatEdit_GetActiveWindow"
+    "ChatEdit_GetActiveWindow",
+    "TooltipDataProcessor",
+    "ChatEdit_InsertLink",
+    "ChatFrameUtil"
   ],
   "asciidoc.antora.showEnableAntoraPrompt": true
 }
