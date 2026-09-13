@@ -6,6 +6,7 @@
 !.gitattributes
 !.github
 !.gitlab
+!/.pkgmeta
 !.gitsecret
 !.terraformignore
 !.pre-commit-config.yaml
