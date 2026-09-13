@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+== [12.2.0] - 2026-09-13
+
+=== Added
+
+- Add missing saveVariables (#42)
+
+=== Changed
+
+- 🔖 bump version to 12.2.0
+- Show GP in item tooltips (#37)
+- Merge branch 'midnight' into develop
+- 🔨 prepare next release
+
 == [12.1.0] - 2026-08-14
 
 === Changed
@@ -19,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Merge branch 'midnight' into develop
 - Merge branch 'release/12.0.5' into midnight
 - 🔨 prepare next release
+- Update addon icon for better visual clarity
+- Merge branch 'release/12.0.1' into midnight
 
 === Fixed
 
@@ -38,8 +53,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update toc to WoW v12.0.5
 - 🔨 bump actions/upload-artifact from 6 to 7
 - Merge branch 'release/12.0.1' into develop
-- Update addon icon for better visual clarity
-- Merge branch 'release/12.0.1' into midnight
 - 🔨 prepare next release
 
 == [12.0.1] - 2026-02-07
@@ -284,6 +297,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 🎉 initial helloworld idea
 - Initial commit
 
+[12.2.0]: https://github.com///compare/v12.1.0..v12.2.0
 [12.1.0]: https://github.com///compare/v12.0.5..v12.1.0
 [12.0.5]: https://github.com///compare/v12.0.1..v12.0.5
 [12.0.1]: https://github.com///compare/v12.0.0..v12.0.1
