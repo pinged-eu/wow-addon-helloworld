@@ -14,7 +14,6 @@ path = [
 "Libs/downloadAceLibs.ps1",
 "raid-log-window/**",
 "HelloWorld*",
-"settings.lua",
 "install.develop.ps1",
 ]
 precedence = "closest"
@@ -38,6 +37,7 @@ path = [
   "**/*.md",
   "**/*.1",
   "docs/**",
+  ".pkgmeta",
   "examples/**",
   ".changelogs/*",
   "os-packaging/linux/**",

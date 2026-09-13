@@ -2,6 +2,8 @@ name: build commit
 
 on:
   push:
+    tags-ignore:
+      - "v*"
   workflow_call:
 
 jobs:
@@ -14,30 +16,21 @@ jobs:
       - name: REUSE Compliance Check
         uses: fsfe/reuse-action@v6
   j1:
-    name: build addon
+    name: build alpha addon
     needs: license-check
-    runs-on: windows-2025
-    env:
-      ZIPFILENAME: "helloworld-addon.zip"
+    runs-on: ubuntu-24.04
     steps:
       - name: checkout branch
         uses: actions/checkout@v7
-      - name: clean and prepare
-        run: |
-          Remove-Item -Recurse helloworld -ErrorAction Ignore
-          Remove-Item $Env:ZIPFILENAME -ErrorAction Ignore
-      - name: create tmp zip dir
-        run: |
-          $loc = Get-Location
-          New-Item -ItemType directory -Path $loc -Name helloworld -Force
-          Copy-Item -Recurse -Path $loc\* -Destination .\helloworld -Include "*.toc","*.lua"
-      - name: Package
-        run: Compress-Archive -DestinationPath $Env:ZIPFILENAME -CompressionLevel Fastest -LiteralPath "helloworld"
-      - name: show dir
-        run: dir
+        with:
+          fetch-depth: 0
+      - name: Package (alpha, no upload)
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -d
       - uses: actions/upload-artifact@v7
         with:
-          name: ${{env.ZIPFILENAME}}
-          path: helloworld/
+          name: helloworld-addon-alpha
+          path: .release/*.zip
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 14

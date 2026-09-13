@@ -1,0 +1,28 @@
+package-as: HelloWorld
+
+# Everything not listed here is included by default (BigWigsMods/packager
+# packages the whole repo minus .gitignore'd files). This ignore list keeps
+# repo/tooling/meta files out of the shipped addon zip.
+ignore:
+  - .github
+  - .gitlab
+  - .gitlab-ci.yml
+  - .changelogs
+  - .crush
+  - .jj
+  - .vscode
+  - docs
+  - README.adoc
+  - CHANGELOG.adoc
+  - CRUSH.md
+  - COPYING
+  - LICENSES
+  - REUSE.toml
+  - cliff.toml
+  - renovate.json
+  - install.develop.ps1
+  - .semver-version
+  - .pre-commit-config.yaml
+  - .editorconfig
+  - .gitattributes
+  - .gitignore
