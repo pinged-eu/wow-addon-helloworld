@@ -9,7 +9,7 @@ on:
 jobs:
   license-check:
     name: license check
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: checkout branch
         uses: actions/checkout@v7
@@ -18,7 +18,7 @@ jobs:
   j1:
     name: build alpha addon
     needs: license-check
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: checkout branch
         uses: actions/checkout@v7
