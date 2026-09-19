@@ -26,7 +26,7 @@ if (!(Test-Path "$wowDirectory"))
   Write-Error "WoW Directory $wowDirectory does not exist!"
 } else
 {
-  $flavors = @("_retail_", "_classic_", "_classic_era_", "_ptr_", "_beta_", "_anniversary_")
+  $flavors = @("_retail_", "_classic_", "_classic_era_", "_ptr_", "_classic_beta_", "_beta_", "_anniversary_", "_forever_")
   foreach ($flavor in $flavors)
   {
     # check if flavor directory exists

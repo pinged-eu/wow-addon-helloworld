@@ -19,6 +19,7 @@ Final deployable releases however are on their respective addon name branch:
 * mop = the releases for WoW v5 Mists of Pandaria
 * thewarwithin = the releases for WoW v11 The War Within
 * midnight = the releases for WoW v12 Midnight
+* forever = the releases for WoW Forever (Classic+)
 
 To use the `git-flow` feature, you can run this command to initialize it (while on the develop branch):
 
