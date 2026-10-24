@@ -111,16 +111,6 @@ function EPGP:GetSlotValue(itemId)
 end
 
 function EPGP:GetItemValue(itemId)
-    -- Item quality IDs (0-based, from select(3, GetItemInfo)):
-    --   0 = poor, 1 = common, 2 = uncommon (green)
-    --   3 = rare (blue), 4 = epic (purple), 5 = legendary (orange)
-    --
-    -- Formulas:
-    --   Uncommon: (itemLevel - 4)     / 2
-    --   Rare:     (itemLevel - 1.84)  / 1.6
-    --   Epic:     (itemLevel - 1.3)   / 1.3
-    --   Legendary:(itemLevel - 1.2)   / 1.2
-    --   Anything else -> 0
     if not IsItemDataCachedCompat(itemId) then
         return 0
     end
@@ -130,18 +120,24 @@ function EPGP:GetItemValue(itemId)
     end
 
     if itemQuality == 0 or itemQuality == 1 then
-        -- gray and white items: no GP value
         return 0
     elseif itemQuality == 2 then     -- uncommon (green)
-        return (itemLevel - 4) / 2
+        local v = (itemLevel - 4) / 2
+        if v <= 0 then return 0 end
+        return v
     elseif itemQuality == 3 then     -- rare (blue)
-        return (itemLevel - 1.84) / 1.6
+        local v = (itemLevel - 1.84) / 1.6
+        if v <= 0 then return 0 end
+        return v
     elseif itemQuality == 4 then     -- epic (purple)
-        return (itemLevel - 1.3) / 1.3
+        local v = (itemLevel - 1.3) / 1.3
+        if v <= 0 then return 0 end
+        return v
     elseif itemQuality == 5 then     -- legendary (orange)
-        return (itemLevel - 1.2) / 1.2
+        local v = (itemLevel - 1.2) / 1.2
+        if v <= 0 then return 0 end
+        return v
     else
-        -- Artifact (6), Heirloom (7), WowToken (8): no GP value
         return 0
     end
 end
